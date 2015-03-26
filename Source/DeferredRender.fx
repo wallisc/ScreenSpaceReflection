@@ -50,6 +50,7 @@ float4 PS(VertexOutput input) : SV_TARGET
    float reflectivity = material[origin].x;
    float4 reflColor = float4(0, 0, 0, 0);
    
+   // Tracing code from http://casual-effects.blogspot.com/2014/08/screen-space-ray-tracing.html
    // c - view space coordinate
    // p - screen space coordinate
    // k - perspective divide
@@ -62,6 +63,8 @@ float4 PS(VertexOutput input) : SV_TARGET
    float k0 = 1.0f / p0.w;
    float k1 = 1.0f / p1.w;
    
+
+   // 
    p0 *= k0; 
    p1 *= k1;
 
